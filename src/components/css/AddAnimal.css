@@ -2,7 +2,7 @@
     width: 100%;
     /* height: 80rem; */
 }
- .sidebar {
+.addanimal .sidebar {
     padding: 0;
     width: 25%;
     background-color: rgb(51, 51, 82);
@@ -12,87 +12,76 @@
     /* opacity: 0.8; */
   }
   
-  .sidebar h2, h6 {
+.addanimal .sidebar h2, h6 {
      color: rgb(255, 255, 255);
      margin-top: 20px;
   }
 
-  .sidebar a {
+.addanimal .sidebar a {
     display: block;
     color: rgb(255, 255, 255);
-    padding: 16px;
+    padding: 30px;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
 }
-
-.inner-menu {
+.addanimal .inner-menu {
     margin-top: 240px;
 }
-
-.inner-menu a {
+.addanimal .inner-menu a {
     color: rgb(0, 0, 0);
+    padding-left: 4px;
 }
-
-.sidebar .inner-menu a:hover:not(.active) {
+.addanimal .sidebar .inner-menu a:hover:not(.active) {
     background-color: #349beb;
     color: rgb(0, 0, 0);
 }
    
-  
-.sidebar a:hover:not(.active) {
+  .addanimal .sidebar a:hover:not(.active) {
     background-color: #349beb;
     color: white;
 }
-
-.content {
+.addanimal .content {
     /* background-color: rgb(46, 45, 45); */
     height: 100%;
     width: 100%;
     padding-left: 12rem;
     background-image: url('../img/animaportfolio-image.svg');
 }
-
-.content h1 {
+.addanimal .content h1 {
     margin-left: 200px;
     color: #000000 !important;
     font-weight: 500;
     text-shadow: 0px 0px 4px #000000;
 }
-
-.content .row {
+.addanimal .content .row {
     margin-left: 200px;
     justify-content: space-between;
     /* width: 70%; */
 }
-
-.content .row .cl {
+.addanimal .content .row .cl {
     background-color: rgb(54, 54, 97);
     padding: 30px 30px;
     /* width: 32%; */
 }
-
-.content .row .cl a {
+.addanimal .content .row .cl a {
     font-size: 20px;
     text-decoration: none;
     color: aliceblue;
     /* margin-left: 10px; */
 }
-
-.content .row .col {
+.addanimal .content .row .col {
     background-color: rgb(88, 88, 143);
     padding: 10px 10px;
     /* width: 10% !important; */
     /* margin-left: 10px; */
 }
-
-.content .row .col a {
+.addanimal .content .row .col a {
     font-size: 20px;
     text-decoration: none;
     color: aliceblue;
    
 }
-
 .addanimal form {
     background-color: #ffffff;
     opacity: 0.8;
@@ -103,23 +92,26 @@
     margin-left: 8rem;
 }
 
-
 .addanimal input {
     background-color: #92B8B8;
-    opacity: 0.8;
+    /* opacity: 0.8; */
     border-radius: 15px;
     border: none;
     width: 15rem;
 }
-
 .addanimal label {
     color:#000000;
     font-weight: 500;
     text-align: left !important;
 }
-
 .addanimal form .right-side {
     position: absolute;
     left: 45rem;
     top: 12rem;
+}
+
+.addanimal .btn {
+    background-color: #DBB324;
+    width: 12rem;
+    z-index: 99;
 }

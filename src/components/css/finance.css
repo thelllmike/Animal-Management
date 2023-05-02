@@ -1,6 +1,6 @@
-/* .sidebar {
+.admindashboard .sidebar {
     padding: 0;
-    width: 250px;
+    width: 290px;
     background-color: rgb(51, 51, 82);
     position: fixed;
     height: 100%;
@@ -8,12 +8,12 @@
     opacity: 0.8;
   }
   
-  .sidebar h2, h6 {
+  .admindashboard .sidebar h2, h6 {
      color: rgb(255, 255, 255);
      margin-top: 20px;
   }
 
-  .sidebar a {
+  .admindashboard .sidebar a {
     display: block;
     color: rgb(255, 255, 255);
     padding: 16px;
@@ -22,64 +22,70 @@
     font-size: 16px;
 }
 
-.inner-menu {
+.admindashboard .inner-menu {
     margin-top: 240px;
 }
 
-.inner-menu a {
+.admindashboard .inner-menu a {
     color: rgb(0, 0, 0);
 }
 
-.sidebar .inner-menu a:hover:not(.active) {
+.admindashboard .sidebar .inner-menu a:hover:not(.active) {
     background-color: #349beb;
     color: rgb(0, 0, 0);
 }
    
   
-.sidebar a:hover:not(.active) {
+.admindashboard .sidebar a:hover:not(.active) {
     background-color: #349beb;
     color: white;
 }
 
-.content {
+.admindashboard .content {
     background-color: rgb(46, 45, 45);
     height: 754px;
     width: 100%;
 }
 
-.content h1 {
+.admindashboard .content h1 {
     margin-left: 200px;
 }
 
-.content .row {
+.admindashboard .content .row {
     margin-left: 200px;
     justify-content: space-between;
     width: 70%;
 }
 
-.content .row .cl {
+.admindashboard .content .row .cl {
     background-color: rgb(54, 54, 97);
     padding: 30px 30px;
     width: 32%;
 }
 
-.content .row .cl a {
+.admindashboard .content .row .cl a {
     font-size: 20px;
     text-decoration: none;
     color: aliceblue;
     margin-left: 10px;
 }
 
-.content .row .col {
+.admindashboard .content .row .col {
     background-color: rgb(88, 88, 143);
     padding: 10px 10px;
     width: 10% !important;
     margin-left: 10px;
 }
 
-.content .row .col a {
+.admindashboard .content .row .col a {
     font-size: 20px;
     text-decoration: none;
     color: aliceblue;
    
-} */
+}
+
+.admindashboard .sidebar img {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-right: 1rem;
+}

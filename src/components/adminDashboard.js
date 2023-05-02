@@ -3,7 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './css/finance.css';
 import heart from "../components/img/heart.png";
-
+import dashboardimg from './img/dashboard.png'
+import visior from './img/visitor.png'
+import project from './img/project.png'
+import finance from './img/finance.png'
+import inventory from './img/inventory.png'
+import handling from './img/handling.png'
+import animal from './img/animal.png'
+import volunteer from './img/volunteer.png'
+import employee from './img/employee.png'
 
 export default  class adminDashboard extends  Component{
 
@@ -14,22 +22,23 @@ export default  class adminDashboard extends  Component{
 
     render() {
         return(
-                <div>
+                <div className='admindashboard'>
                     <div class="sidebar">
                         <center>
                             <h2>Animal Haven</h2>
                             <h6>Admin Dashboard</h6>
                         </center>
                         <br/>
-                        <a href="/">Dashboard</a>
-                        <a href="/">Visitor Management</a>
-                        <a href="/">Project Management</a>
-                        <a href="/financeDashboard">Finance Management</a>
-                        <a href="/">Inventory Management</a>
-                        <a href="/">Handing Medical Records</a>
-                        <a href="/AnimalsDashbord">Animal Management</a>
-                        <a href="">Volunteer Management</a>
-                        <a href="">Employee Management</a>
+                        <a href="/"><img src={dashboardimg} alt="" />Dashboard</a>
+                        <a href="/"><img src={visior} alt="" /> Visitor Management</a>
+                        <a href="/"><img src={project} alt="" />Project Management</a>
+                        <a href="/financeDashboard"><img src={finance} alt="" />Finance Management</a>
+                        <a href="/"><img src={inventory} alt="" />Inventory Management</a>
+                        <a href="/"><img src={handling} alt="" />Handing Medical Records</a>
+                        <a href="/AnimalsDashbord"><img src={animal} alt="" />Animal Management</a>
+                        <a href=""><img src={volunteer} alt="" />Volunteer Management</a>
+                        <a href=""><img src={employee} alt="" />Employee Management</a>
+                        
                     </div>
 
                     <div class="content">
