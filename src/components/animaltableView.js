@@ -20,7 +20,12 @@ export default class animaltable extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { animal: [] };
+		this.state = { animal: [], search: "" };
+	}
+	onChangeSearch(e) {
+		this.setState({
+			search: e.target.value,
+		});
 	}
 
 	componentDidMount() {
@@ -122,9 +127,9 @@ export default class animaltable extends Component {
 
 						<h4 style={{ color: "white", marginRight: 600 }}></h4>
 					</center>
-					<form action=''>
+					<form  onSubmit={this.onSubmit}>
 						<div className='search'>
-							<input type='text' />
+							<input type='text' required value={this.state.search} onChange = {this.onChangeSearch}/>
 							<button type='submit'> Search</button>
 						</div>
 					</form>
