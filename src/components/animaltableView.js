@@ -21,6 +21,7 @@ export default class animaltable extends Component {
 		super(props);
 
 		this.state = { animal: [], search: "" };
+		this.onChangeSearch = this.onChangeSearch.bind(this);
 	}
 	onChangeSearch(e) {
 		this.setState({
@@ -130,7 +131,7 @@ export default class animaltable extends Component {
 					<form  onSubmit={this.onSubmit}>
 						<div className='search'>
 							<input type='text' required value={this.state.search} onChange = {this.onChangeSearch}/>
-							<button type='submit'> Search</button>
+							<button type='submit'>  <a href ={"/seaechAnimal/"+this.state.search} >Search</a></button>
 						</div>
 					</form>
 					<table

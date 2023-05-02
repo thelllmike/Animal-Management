@@ -34,7 +34,7 @@ class App extends Component{
                       <Route path='/financeDashboard' component={financeDashboard}/>
                    
 
-                      <Route path='/seaechAnimal/:pathParam1?' component={editAnimal}/>
+                      <Route path='/seaechAnimal/:pathParam1?' component={seaechAnimal}/>
 
                       <Route path='/AnimalsDashbord' component={AnimalDashbord}/>
                       <Route path='/addAnimal' component={addAnimal}/>
