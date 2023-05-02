@@ -1,0 +1,15 @@
+.animaltableview .content {
+    background-image: url('../img/animaldashboard-image.svg')!important;
+}
+.animaltableview table {
+    /* width: 80%; */
+    margin-left: 20rem;
+    background-color: #B9B9B9;
+}
+.animaltableview table th {
+    color: #000000;
+}
+
+.animaltableview h1 {
+    color: #000000;
+}

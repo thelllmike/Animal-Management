@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import dashboardimg from './img/dashboard.png'
+import dashboardimg from "./img/dashboard.png";
 
 // import './css/finance.css';
 import "./css/AddAnimal.css";
 
-import dashboard from './img/dashboard.png'
-import visior from './img/visitor.png'
-import project from './img/project.png'
-import finance from './img/finance.png'
-import inventory from './img/inventory.png'
-import handling from './img/handling.png'
-import animal from './img/animal.png'
-import volunteer from './img/volunteer.png'
-import employee from './img/employee.png'
+import dashboard from "./img/dashboard.png";
+import visior from "./img/visitor.png";
+import project from "./img/project.png";
+import finance from "./img/finance.png";
+import inventory from "./img/inventory.png";
+import handling from "./img/handling.png";
+import animal from "./img/animal.png";
+import volunteer from "./img/volunteer.png";
+import employee from "./img/employee.png";
 export default class addAnimal extends Component {
 	constructor(props) {
 		super(props);
@@ -142,28 +142,52 @@ export default class addAnimal extends Component {
 						<h6>Admin Dashboard</h6>
 					</center>
 					<br />
-					<a href="/"><img src={dashboardimg} alt="" />Dashboard</a>
-                        <a href="/"><img src={visior} alt="" /> Visitor Management</a>
-                        <a href="/"><img src={project} alt="" />Project Management</a>
-                        <a href="/financeDashboard"><img src={finance} alt="" />Finance Management</a>
-                        <a href="/"><img src={inventory} alt="" />Inventory Management</a>
-                        <a href="/"><img src={handling} alt="" />Handing Medical Records</a>
-                        <a href="/AnimalsDashbord"><img src={animal} alt="" />Animal Management</a>
-                        <a href=""><img src={volunteer} alt="" />Volunteer Management</a>
-                        <a href=""><img src={employee} alt="" />Employee Management</a>
+					<a href='/'>
+						<img src={dashboardimg} alt='' />
+						Dashboard
+					</a>
+					<a href='/'>
+						<img src={visior} alt='' /> Visitor Management
+					</a>
+					<a href='/'>
+						<img src={project} alt='' />
+						Project Management
+					</a>
+					<a href='/financeDashboard'>
+						<img src={finance} alt='' />
+						Finance Management
+					</a>
+					<a href='/'>
+						<img src={inventory} alt='' />
+						Inventory Management
+					</a>
+					<a href='/'>
+						<img src={handling} alt='' />
+						Handing Medical Records
+					</a>
+					<a href='/AnimalsDashbord'>
+						<img src={animal} alt='' />
+						Animal Management
+					</a>
+					<a href=''>
+						<img src={volunteer} alt='' />
+						Volunteer Management
+					</a>
+					<a href=''>
+						<img src={employee} alt='' />
+						Employee Management
+					</a>
 				</div>
 
 				<div class='content'>
-                    <img src={dashboard} alt="" />
+					<img src={dashboard} alt='' />
 					<center>
 						<br />
-						<h1 style={{ fontSize: 70, color: "white"}}>
-							Animal Portfolio
-						</h1>
+						<h1 style={{ fontSize: 70, color: "white" }}>Animal Portfolio</h1>
 					</center>
 
 					<br />
-					<div className='container' style={{ }}>
+					<div className='container' style={{}}>
 						<form
 							onSubmit={this.onSubmit}
 							style={{ color: "white", width: "100%" }}>
@@ -279,62 +303,60 @@ export default class addAnimal extends Component {
 								</div>
 							</div>{" "}
 							<br />
-                            <div className="right-side">
-
-                           
-							<div class=''>
-								<div class='col-auto'>
-									<label class='col-form-label'>
-										Date of tretement & medical care :
-									</label>
+							<div className='right-side'>
+								<div class=''>
+									<div class='col-auto'>
+										<label class='col-form-label'>
+											Date of tretement & medical care :
+										</label>
+									</div>
+									<div class='col-auto'>
+										<input
+											type='date'
+											class='form-control'
+											min='1'
+											value={this.state.dateMedical}
+											onChange={this.onChangedateMedical}
+											required
+										/>
+									</div>
 								</div>
-								<div class='col-auto'>
-									<input
-										type='date'
-										class='form-control'
-										min='1'
-										value={this.state.dateMedical}
-										onChange={this.onChangedateMedical}
-										required
-									/>
+								<br />
+								<div class=''>
+									<div class='col-auto'>
+										<label class='col-form-label'>
+											Time of treatement & medical care :
+										</label>
+									</div>
+									<div class='col-auto' style={{ width: "51%" }}>
+										<input
+											type='date'
+											class='form-control'
+											value={this.state.timeTretement}
+											onChange={this.onChangetimeTretement}
+											required
+										/>
+									</div>
 								</div>
+								<br />
+								<div class=''>
+									<div class='col-auto'>
+										<label class='col-form-label'>Health Level :</label>
+									</div>
+									<div class='col-auto'>
+										<input
+											type='text'
+											class='form-control'
+											min='1'
+											value={this.state.health}
+											onChange={this.onChangehealth}
+											required
+										/>
+									</div>
+								</div>
+								<br />
+								<br />
 							</div>
-							<br />
-							<div class=''>
-								<div class='col-auto'>
-									<label class='col-form-label'>
-										Time of treatement & medical care :
-									</label>
-								</div>
-								<div class='col-auto' style={{ width: "51%" }}>
-									<input
-										type='date'
-										class='form-control'
-										value={this.state.timeTretement}
-										onChange={this.onChangetimeTretement}
-										required
-									/>
-								</div>
-							</div>
-							<br />
-							<div class=''>
-								<div class='col-auto'>
-									<label class='col-form-label'>Health Level :</label>
-								</div>
-								<div class='col-auto'>
-									<input
-										type='text'
-										class='form-control'
-										min='1'
-										value={this.state.health}
-										onChange={this.onChangehealth}
-										required
-									/>
-								</div>
-							</div>
-							<br />
-							<br />
-                            </div>
 							<button
 								type='submit'
 								class='btn btn-info'

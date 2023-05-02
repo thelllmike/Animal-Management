@@ -2,8 +2,19 @@ import  React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
+
 import './css/animaltableview.css';
 import TableRow from './animalTableRow';
+
+import dashboardimg from "./img/dashboard.png";
+import visior from "./img/visitor.png";
+import project from "./img/project.png";
+import finance from "./img/finance.png";
+import inventory from "./img/inventory.png";
+import handling from "./img/handling.png";
+import animal from "./img/animal.png";
+import volunteer from "./img/volunteer.png";
+import employee from "./img/employee.png";
 
 
 export default  class animaltable extends  Component{
@@ -45,15 +56,41 @@ export default  class animaltable extends  Component{
                             <h6>Admin Dashboard</h6>
                         </center>
                         <br/>
-                        <a href="/">Dashboard</a>
-                        <a href="/">Visitor Management</a>
-                        <a href="/">Project Management</a>
-                        <a href="/">Finance Management</a>
-                        <a href="/">Inventory Management</a>
-                        <a href="/">Handing Medical Records</a>
-                        <a href="/">Animal Management</a>
-                        <a href="">Volunteer Management</a>
-                        <a href="">Employee Management</a>
+                        <a href='/'>
+						<img src={dashboardimg} alt='' />
+						Dashboard
+					</a>
+					<a href='/'>
+						<img src={visior} alt='' /> Visitor Management
+					</a>
+					<a href='/'>
+						<img src={project} alt='' />
+						Project Management
+					</a>
+					<a href='/financeDashboard'>
+						<img src={finance} alt='' />
+						Finance Management
+					</a>
+					<a href='/'>
+						<img src={inventory} alt='' />
+						Inventory Management
+					</a>
+					<a href='/'>
+						<img src={handling} alt='' />
+						Handing Medical Records
+					</a>
+					<a href='/AnimalsDashbord'>
+						<img src={animal} alt='' />
+						Animal Management
+					</a>
+					<a href=''>
+						<img src={volunteer} alt='' />
+						Volunteer Management
+					</a>
+					<a href=''>
+						<img src={employee} alt='' />
+						Employee Management
+					</a>
                     </div>
 
                     <div class="content">
@@ -61,12 +98,12 @@ export default  class animaltable extends  Component{
                         <center>
 
                             <br/>
-                            <h1 style={{fontSize:40,color:'white',marginBottom:30}}>ANIMAL DASHBOARD</h1>
+                            <h1 style={{fontSize:40,marginBottom:30}}>ANIMAL DASHBOARD</h1>
 
                             <h4 style={{color:'white',marginRight:600}}></h4>
                         </center>
 
-                        <table className="table table-striped" style = {{marginTop :20,marginLeft:270,width:'80%',color:'white'}}>
+                        <table className="table table-striped" style = {{marginTop :20,width:'70%'}}>
                             <thead>
                                 <tr>
                                    

@@ -106,7 +106,7 @@
 }
 .addanimal form .right-side {
     position: absolute;
-    left: 45rem;
+    left: 60rem;
     top: 12rem;
 }
 
@@ -114,6 +114,7 @@
     background-color: #DBB324;
     width: 12rem;
     z-index: 99;
+    margin-left: 12%;
 } 
 
 
