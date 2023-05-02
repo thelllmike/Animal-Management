@@ -6,6 +6,8 @@ import addAnimal from './components/addAnimal';
 
 import animaltableView from './components/animaltableView';
 
+import editAnimal from './components/editAnimal';
+
 
 import financeDashboard from './components/financeDashboard';
 
@@ -33,6 +35,7 @@ class App extends Component{
 
                       <Route path='/AnimalsDashbord' component={AnimalDashbord}/>
                       <Route path='/addAnimal' component={addAnimal}/>
+                      <Route path='/editAnimal/id' component={editAnimal}/>
                       <Route path='/animaltableView' component={animaltableView}/>
                     </Switch>
                 </Router>

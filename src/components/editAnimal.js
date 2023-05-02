@@ -45,6 +45,31 @@ export default class addAnimal extends Component {
 			health: "",
 		};
 	}
+
+    componentDidMount() {
+        // alert('edit id ' +this.props.match.params.id);
+        axios.get('http://localhost:4000/animal/edit/'+this.props.match.params.id)
+            .then(res => {
+                this.setState({
+                    aId: res.data.aId,
+                    aName: res.data.aName,
+                    aSpecies: res.data.aSpecies,
+                    dob: res.data.dob,
+					gender: res.data.gender,
+					fTime: res.data.fTime,
+					zkeeper: res.data.zkeeper,
+					dateMedical: res.data.dateMedical,
+                    timeTretement: res.data.timeTretement,
+                    health: res.data.health,
+                   
+                });
+            })
+            .catch(function (error){
+                console.log("Can't Get Data");
+            })
+    }
+
+
 	onChangeaId(e) {
 		this.setState({
 			aId: e.target.value,
@@ -112,8 +137,9 @@ export default class addAnimal extends Component {
 			timeTretement: this.state.timeTretement,
 			health: this.state.health,
 		};
-
-		axios.post("http://localhost:4000/animal/add", obj).then((res) => {
+        axios.post('http://localhost:4000/animal/update/'+this.props.match.params.id,obj)
+	
+        .then((res) => {
 			alert(" Successfully added");
 			this.setState({
 				aId: "",
@@ -130,7 +156,7 @@ export default class addAnimal extends Component {
 			console.log(res.data);
 		});
 		//this.props.history.push('/viewpayment/'+this.props.match.params.id);
-		//window.location.replace('/viewForeignTicket');
+		window.location.replace('/animaltableView');
 	}
 
 	render() {
@@ -363,7 +389,7 @@ export default class addAnimal extends Component {
 								type='submit'
 								class='btn btn-info'
 								style={{ marginLeft: 210 }}>
-								Add
+								Edit
 							</button>
 						</form>
 					</div>

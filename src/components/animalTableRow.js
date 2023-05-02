@@ -19,18 +19,40 @@ class TableRow extends Component {
         return (
            <tr>
                <td>
-                   {this.props.obj.tno}
+                   {this.props.obj.aId}
                </td>
                <td>
-                   {this.props.obj.type}
+                   {this.props.obj.aName}
                </td>
                <td>
-                   {this.props.obj.price}
+                   {this.props.obj.aSpecies}
                </td>
+               <td>
+                   {this.props.obj.dob}
+               </td>
+               <td>
+                   {this.props.obj.gender}
+               </td>
+               <td>
+                   {this.props.obj.fTime}
+               </td>
+               <td>
+                   {this.props.obj.zkeeper}
+               </td>
+               <td>
+                   {this.props.obj.dateMedical}
+               </td>
+               <td>
+                   {this.props.obj.timeTretement}
+               </td>
+               <td>
+                   {this.props.obj.health}
+               </td>
+
                <td>
                    {/* <Link to={"/viewOneNativeTicket/"+this.props.obj._id} className="btn btn-info">View</Link> */}
                     {/* &nbsp; */}
-                   <Link to={"/editNativeTicket/"+this.props.obj._id} className="btn btn-success">Edit</Link>
+                   <Link to={"/EditAnimal/"+this.props.obj._id} className="btn btn-success">Edit</Link>
                     &nbsp;
                    <button onClick={this.delete} className="btn btn-danger">Delete</button>
                </td>

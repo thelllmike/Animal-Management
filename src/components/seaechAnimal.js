@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
 import "./css/animaltableview.css";
-import TableRow from "./animalTableRow";
+import SearchTableRow from "./animalTableRow";
 
 import dashboardimg from "./img/dashboard.png";
 import visior from "./img/visitor.png";
@@ -15,21 +15,21 @@ import animal from "./img/animal.png";
 import volunteer from "./img/volunteer.png";
 import employee from "./img/employee.png";
 
-export default class animaltable extends Component {
+export default class searchanimaltable extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { animal: [] };
+		this.state = { animals: [] };
 	}
 
 	componentDidMount() {
 		// alert('email is ' +this.props.match.params.id);
-		axios
-			.get("http://localhost:4000/animal/getall/")
+        axios.get('http://localhost:4000/animal/search/'+this.props.match.params.pathParam1)
+
 			.then((response) => {
 				// alert('Pass una')
 				// alert('Data Tika :'+response.data)
-				this.setState({ animal: response.data });
+				this.setState({ animals: response.data });
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -37,8 +37,8 @@ export default class animaltable extends Component {
 	}
 
 	tabRow() {
-		return this.state.animal.map(function (object, i) {
-			return <TableRow obj={object} key={i} />;
+		return this.state.animals.map(function (object, i) {
+			return <SearchTableRow obj={object} key={i} />;
 		});
 		// return <OrderTableRow obj={this.state.orders}/>
 	}
@@ -96,12 +96,7 @@ export default class animaltable extends Component {
 
 						<h4 style={{ color: "white", marginRight: 600 }}></h4>
 					</center>
-					<form action=''>
-						<div className='search'>
-							<input type='text' />
-							<button type='submit'> Search</button>
-						</div>
-					</form>
+				
 					<table
 						className='table table-striped'
 						style={{ marginTop: 20, width: "70%" }}>

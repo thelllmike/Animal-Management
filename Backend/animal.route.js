@@ -85,7 +85,7 @@ animalRoutes.route('/search/:pathParam1?').get(function (req, res){
     console.log("your search is "+search);
 
     // Orders.find({$and:[{date : search},{email : email}]},function (err,srch){
-        Animal.find({$and:[{$or: [{name: search}, {empId: search},{posision: search}]}]},function (err,srch){ 
+        Animal.find({$and:[{$or: [{aName: search}, {aId: search},{gender: search}]}]},function (err,srch){ 
         if(err)
             console.log(err);
         else{
