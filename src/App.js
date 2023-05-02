@@ -6,7 +6,10 @@ import addAnimal from './components/addAnimal';
 
 import animaltableView from './components/animaltableView';
 
-import editAnimal from './components/editAnimal';
+ import editAnimal from './components/editAnimal';
+
+ 
+ import seaechAnimal from './components/seaechAnimal';
 
 
 import financeDashboard from './components/financeDashboard';
@@ -31,11 +34,11 @@ class App extends Component{
                       <Route path='/financeDashboard' component={financeDashboard}/>
                    
 
-                     
+                      <Route path='/seaechAnimal/:pathParam1?' component={editAnimal}/>
 
                       <Route path='/AnimalsDashbord' component={AnimalDashbord}/>
                       <Route path='/addAnimal' component={addAnimal}/>
-                      <Route path='/editAnimal/id' component={editAnimal}/>
+                      <Route path='/editAnimal/:id' component={editAnimal}/>
                       <Route path='/animaltableView' component={animaltableView}/>
                     </Switch>
                 </Router>

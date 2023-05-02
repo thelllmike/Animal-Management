@@ -73,7 +73,7 @@ export default class addAnimal extends Component {
 	}
 	onChangefTime(e) {
 		this.setState({
-			zkeeper: e.target.value,
+			fTime: e.target.value,
 		});
 	}
 	onChangezkeeper(e) {
@@ -257,7 +257,7 @@ export default class addAnimal extends Component {
 							<br />
 							<div class=''>
 								<div class='col-auto'>
-									<label class='col-form-label'>Date of Birth :</label>
+									<label class='col-form-label'>Gender:</label>
 								</div>
 								<div class='col-auto'>
 									<input

@@ -98,7 +98,7 @@ export default class addAnimal extends Component {
 	}
 	onChangefTime(e) {
 		this.setState({
-			zkeeper: e.target.value,
+			fTime: e.target.value,
 		});
 	}
 	onChangezkeeper(e) {
@@ -137,8 +137,8 @@ export default class addAnimal extends Component {
 			timeTretement: this.state.timeTretement,
 			health: this.state.health,
 		};
+
         axios.post('http://localhost:4000/animal/update/'+this.props.match.params.id,obj)
-	
         .then((res) => {
 			alert(" Successfully added");
 			this.setState({
@@ -283,7 +283,7 @@ export default class addAnimal extends Component {
 							<br />
 							<div class=''>
 								<div class='col-auto'>
-									<label class='col-form-label'>Date of Birth :</label>
+									<label class='col-form-label'>Gender :</label>
 								</div>
 								<div class='col-auto'>
 									<input

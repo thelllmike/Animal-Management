@@ -4,7 +4,8 @@ import axios from "axios";
 
 import "./css/animaltableview.css";
 import TableRow from "./animalTableRow";
-
+import jsPDF from "jspdf";
+import 'jspdf-autotable';
 import dashboardimg from "./img/dashboard.png";
 import visior from "./img/visitor.png";
 import project from "./img/project.png";
@@ -42,6 +43,31 @@ export default class animaltable extends Component {
 		});
 		// return <OrderTableRow obj={this.state.orders}/>
 	}
+	exportPDF = () => {
+        const unit = "pt";
+        const size = "A4"; // Use A1, A2, A3 or A4
+        const orientation = "portrait"; // portrait or landscape
+    
+        const marginLeft = 40;
+		const doc = new jsPDF(orientation, unit, size);
+    
+        doc.setFontSize(15);
+    
+        const title = "Animal Report";
+        const headers = [["aId", "aName","aSpecies", "dob","gender", "fTime", "zkeeper", "dateMedical", "timeTretement", "health"]];
+    
+        const data = this.state.animal.map(elt=> [elt.aId, elt.aName,  elt.aSpecies,elt.dob, elt.gender, elt.fTime, elt.zkeeper, elt.dateMedical, elt.timeTretement, elt.health]);
+    
+        let content = {
+          startY: 50,
+          head: headers,
+          body: data
+        };
+    
+        doc.text(title, marginLeft, 40);
+        doc.autoTable(content);
+        doc.save("report.pdf")
+      }
 
 	render() {
 		return (
@@ -121,6 +147,9 @@ export default class animaltable extends Component {
 						</thead>
 						<tbody>{this.tabRow()}</tbody>
 					</table>
+					<center>
+                        <button onClick={() => this.exportPDF()}style={{background:'blue',padding:10, color:'white', border:'none',borderRadius:'20'}}>- Export All -</button>
+                    </center>
 				</div>
 			</div>
 		);

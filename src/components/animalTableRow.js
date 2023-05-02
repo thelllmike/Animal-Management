@@ -52,7 +52,7 @@ class TableRow extends Component {
                <td>
                    {/* <Link to={"/viewOneNativeTicket/"+this.props.obj._id} className="btn btn-info">View</Link> */}
                     {/* &nbsp; */}
-                   <Link to={"/EditAnimal/"+this.props.obj._id} className="btn btn-success">Edit</Link>
+                   <Link to={"/editAnimal/"+this.props.obj._id} className="btn btn-success">Edit</Link>
                     &nbsp;
                    <button onClick={this.delete} className="btn btn-danger">Delete</button>
                </td>
