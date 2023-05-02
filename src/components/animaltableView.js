@@ -2,7 +2,7 @@ import  React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
-import './css/finance.css';
+import './css/animaltableview.css';
 import TableRow from './animalTableRow';
 
 
@@ -38,7 +38,7 @@ export default  class animaltable extends  Component{
 
     render() {
         return(
-                <div>
+                <div className='animaltableview'>
                      <div class="sidebar">
                         <center>
                             <h2>Animal Haven</h2>

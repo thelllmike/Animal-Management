@@ -1,19 +1,19 @@
-.admindashboard .sidebar {
+ .sidebar {
     padding: 0;
     width: 290px;
     background-color: rgb(51, 51, 82);
     position: fixed;
     height: 100%;
     overflow: auto;
-    opacity: 0.8;
+    /* opacity: 0.8; */
   }
   
-  .admindashboard .sidebar h2, h6 {
+   .sidebar h2, h6 {
      color: rgb(255, 255, 255);
      margin-top: 20px;
   }
 
-  .admindashboard .sidebar a {
+   .sidebar a {
     display: block;
     color: rgb(255, 255, 255);
     padding: 16px;
@@ -22,69 +22,69 @@
     font-size: 16px;
 }
 
-.admindashboard .inner-menu {
+ .inner-menu {
     margin-top: 240px;
 }
 
-.admindashboard .inner-menu a {
+ .inner-menu a {
     color: rgb(0, 0, 0);
 }
 
-.admindashboard .sidebar .inner-menu a:hover:not(.active) {
+ .sidebar .inner-menu a:hover:not(.active) {
     background-color: #349beb;
     color: rgb(0, 0, 0);
 }
    
   
-.admindashboard .sidebar a:hover:not(.active) {
+ .sidebar a:hover:not(.active) {
     background-color: #349beb;
     color: white;
 }
 
-.admindashboard .content {
+ .content {
     background-color: rgb(46, 45, 45);
     height: 754px;
     width: 100%;
 }
 
-.admindashboard .content h1 {
+ .content h1 {
     margin-left: 200px;
 }
 
-.admindashboard .content .row {
+ .content .row {
     margin-left: 200px;
     justify-content: space-between;
     width: 70%;
 }
 
-.admindashboard .content .row .cl {
+ .content .row .cl {
     background-color: rgb(54, 54, 97);
     padding: 30px 30px;
     width: 32%;
 }
 
-.admindashboard .content .row .cl a {
+ .content .row .cl a {
     font-size: 20px;
     text-decoration: none;
     color: aliceblue;
     margin-left: 10px;
 }
 
-.admindashboard .content .row .col {
+ .content .row .col {
     background-color: rgb(88, 88, 143);
     padding: 10px 10px;
     width: 10% !important;
     margin-left: 10px;
 }
 
-.admindashboard .content .row .col a {
+ .content .row .col a {
     font-size: 20px;
     text-decoration: none;
     color: aliceblue;
    
 }
 
-.admindashboard .sidebar img {
+ .sidebar img {
     width: 1.4rem;
     height: 1.4rem;
     margin-right: 1rem;
