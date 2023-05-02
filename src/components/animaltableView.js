@@ -1,10 +1,9 @@
-import  React, {Component} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
+import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
-
-import './css/animaltableview.css';
-import TableRow from './animalTableRow';
+import "./css/animaltableview.css";
+import TableRow from "./animalTableRow";
 
 import dashboardimg from "./img/dashboard.png";
 import visior from "./img/visitor.png";
@@ -16,47 +15,44 @@ import animal from "./img/animal.png";
 import volunteer from "./img/volunteer.png";
 import employee from "./img/employee.png";
 
+export default class animaltable extends Component {
+	constructor(props) {
+		super(props);
 
-export default  class animaltable extends  Component{
+		this.state = { animal: [] };
+	}
 
+	componentDidMount() {
+		// alert('email is ' +this.props.match.params.id);
+		axios
+			.get("http://localhost:4000/finance/managetickettype/")
+			.then((response) => {
+				// alert('Pass una')
+				// alert('Data Tika :'+response.data)
+				this.setState({ animal: response.data });
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
 
-    constructor(props) {
-        super(props);
+	tabRow() {
+		return this.state.animal.map(function (object, i) {
+			return <TableRow obj={object} key={i} />;
+		});
+		// return <OrderTableRow obj={this.state.orders}/>
+	}
 
-        this.state = {animal : []};
-    }
-
-    componentDidMount() {
-        // alert('email is ' +this.props.match.params.id);
-        axios.get('http://localhost:4000/finance/managetickettype/')
-            .then(response => {
-                // alert('Pass una')
-                // alert('Data Tika :'+response.data)
-                this.setState({animal : response.data});
-
-            })
-            .catch(function (error){
-                console.log(error);
-            })
-    }
-
-    tabRow(){
-        return this.state.animal.map(function (object, i){
-            return <TableRow obj = {object} key = {i}/>;
-        });
-        // return <OrderTableRow obj={this.state.orders}/>
-    }
-
-    render() {
-        return(
-                <div className='animaltableview'>
-                     <div class="sidebar">
-                        <center>
-                            <h2>Animal Haven</h2>
-                            <h6>Admin Dashboard</h6>
-                        </center>
-                        <br/>
-                        <a href='/'>
+	render() {
+		return (
+			<div className='animaltableview'>
+				<div class='sidebar'>
+					<center>
+						<h2>Animal Haven</h2>
+						<h6>Admin Dashboard</h6>
+					</center>
+					<br />
+					<a href='/'>
 						<img src={dashboardimg} alt='' />
 						Dashboard
 					</a>
@@ -91,41 +87,42 @@ export default  class animaltable extends  Component{
 						<img src={employee} alt='' />
 						Employee Management
 					</a>
-                    </div>
+				</div>
 
-                    <div class="content">
+				<div class='content'>
+					<center>
+						<br />
+						<h1 style={{ fontSize: 40, marginBottom: 30 }}>ANIMAL DASHBOARD</h1>
 
-                        <center>
-
-                            <br/>
-                            <h1 style={{fontSize:40,marginBottom:30}}>ANIMAL DASHBOARD</h1>
-
-                            <h4 style={{color:'white',marginRight:600}}></h4>
-                        </center>
-
-                        <table className="table table-striped" style = {{marginTop :20,width:'70%'}}>
-                            <thead>
-                                <tr>
-                                   
-                                    <th>Animal id</th>
-                                    <th>Name</th>
-                                    <th>Scpices</th>
-                                    <th>DoB</th>
-                                    <th>Gender</th>
-                                    <th>F Time</th>
-                                    <th>Keeper Attend</th>
-                                    <th>T Date</th>
-                                    <th>T Time</th>
-                                    <th>H LEvel</th>
-                                  
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {this.tabRow()}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-        );
-    }
+						<h4 style={{ color: "white", marginRight: 600 }}></h4>
+					</center>
+					<form action=''>
+						<div className='search'>
+							<input type='text' />
+							<button type='submit'> Search</button>
+						</div>
+					</form>
+					<table
+						className='table table-striped'
+						style={{ marginTop: 20, width: "70%" }}>
+						<thead>
+							<tr>
+								<th>Animal id</th>
+								<th>Name</th>
+								<th>Scpices</th>
+								<th>DoB</th>
+								<th>Gender</th>
+								<th>F Time</th>
+								<th>Keeper Attend</th>
+								<th>T Date</th>
+								<th>T Time</th>
+								<th>H LEvel</th>
+							</tr>
+						</thead>
+						<tbody>{this.tabRow()}</tbody>
+					</table>
+				</div>
+			</div>
+		);
+	}
 }

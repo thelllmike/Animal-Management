@@ -245,7 +245,7 @@ export default class addAnimal extends Component {
 								</div>
 								<div class='col-auto'>
 									<input
-										type='text'
+										type='date'
 										class='form-control'
 										min='1'
 										value={this.state.dob}
@@ -257,7 +257,7 @@ export default class addAnimal extends Component {
 							<br />
 							<div class=''>
 								<div class='col-auto'>
-									<label class='col-form-label'>Animal Gender :</label>
+									<label class='col-form-label'>Date of Birth :</label>
 								</div>
 								<div class='col-auto'>
 									<input
@@ -270,6 +270,8 @@ export default class addAnimal extends Component {
 									/>
 								</div>
 							</div>{" "}
+							<br />
+
 							<br />
 							<div class=''>
 								<div class='col-auto'>

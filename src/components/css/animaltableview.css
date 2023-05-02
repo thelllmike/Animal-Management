@@ -13,3 +13,21 @@
 .animaltableview h1 {
     color: #000000;
 }
+
+.animaltableview .search {
+    margin-left: 55rem;
+}
+
+.animaltableview .search input, .animaltableview .search button {
+    border: none;
+    border-radius: 15px;
+    padding-left: 1rem;
+}
+
+.animaltableview .search button {
+    margin-left: 1rem;
+    width: 10rem;
+    background-color: rgb(46, 45, 45);
+    color: #ffffff;
+    height: 2rem;
+}
