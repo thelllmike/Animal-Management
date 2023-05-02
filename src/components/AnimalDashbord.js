@@ -56,7 +56,7 @@ export default  class financeDashboard extends  Component{
                             <br/><br/>
                             <div className='row'>
                                 <div className='col'>
-                                    <a href='/manageTicketType'>View</a>
+                                    <a href='/animaltableView'>View</a>
                                 </div>
                                 <div className='col'>
                                     <a href='/reportDashboard'>REPORT</a>
