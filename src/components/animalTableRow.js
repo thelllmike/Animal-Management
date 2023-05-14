@@ -13,7 +13,7 @@ class TableRow extends Component {
             .then(this.setState({redirect: true}))
             .catch(err => console.log(err))
         alert(" Successfully Deleted....")
-        window.location.replace('/');
+        window.location.replace('/animaltableView');
     }
     render() {
         return (
@@ -47,6 +47,9 @@ class TableRow extends Component {
                </td>
                <td>
                    {this.props.obj.health}
+               </td>
+               <td>
+                   {this.props.obj.fTime2}
                </td>
 
                <td>

@@ -25,6 +25,10 @@ Animal = new Schema({
         type: String
     }
     ,
+    fTime2: {
+        type: String
+    }
+    ,
     zkeeper: {
         type: String
     },

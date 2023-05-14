@@ -149,6 +149,7 @@ export default class animaltable extends Component {
 								<th>T Date</th>
 								<th>T Time</th>
 								<th>H LEvel</th>
+								<th>H LEvel</th>
 							</tr>
 						</thead>
 						<tbody>{this.tabRow()}</tbody>

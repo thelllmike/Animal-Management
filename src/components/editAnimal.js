@@ -29,6 +29,7 @@ export default class addAnimal extends Component {
 		this.onChangedateMedical = this.onChangedateMedical.bind(this);
 		this.onChangetimeTretement = this.onChangetimeTretement.bind(this);
 		this.onChangehealth = this.onChangehealth.bind(this);
+		this.onChangefTime2 = this.onChangefTime2.bind(this);
 
 		this.onSubmit = this.onSubmit.bind(this);
 
@@ -43,6 +44,7 @@ export default class addAnimal extends Component {
 			dateMedical: "",
 			timeTretement: "",
 			health: "",
+			fTime2: "",
 		};
 	}
 
@@ -61,7 +63,7 @@ export default class addAnimal extends Component {
 					dateMedical: res.data.dateMedical,
                     timeTretement: res.data.timeTretement,
                     health: res.data.health,
-                   
+					fTime2: res.data.fTime2,
                 });
             })
             .catch(function (error){
@@ -69,6 +71,11 @@ export default class addAnimal extends Component {
             })
     }
 
+	onChangefTime2(e) {
+		this.setState({
+			fTime2: e.target.value,
+		});
+	}
 
 	onChangeaId(e) {
 		this.setState({
@@ -125,6 +132,16 @@ export default class addAnimal extends Component {
 	onSubmit(e) {
 		e.preventDefault();
 
+			
+	const dobDate = new Date(this.state.dob); // convert dob string to a Date object
+	const currentDate = new Date(); // get the current date
+
+	if (dobDate > currentDate) { // check if dob is after current date
+		alert('Invalid date of birth. Please enter a valid date.');
+		return;
+	}
+
+
 		const obj = {
 			aId: this.state.aId,
 			aName: this.state.aName,
@@ -136,6 +153,7 @@ export default class addAnimal extends Component {
 			dateMedical: this.state.dateMedical,
 			timeTretement: this.state.timeTretement,
 			health: this.state.health,
+			fTime2: this.state.fTime2,
 		};
 
         axios.post('http://localhost:4000/animal/update/'+this.props.match.params.id,obj)
@@ -152,6 +170,7 @@ export default class addAnimal extends Component {
 				dateMedical: "",
 				timeTretement: "",
 				health: "",
+				fTime2: "",
 			});
 			console.log(res.data);
 		});
@@ -315,6 +334,8 @@ export default class addAnimal extends Component {
 								</div>
 							</div>{" "}
 							<br />
+					
+							<br />
 							<div class=''>
 								<div class='col-auto'>
 									<label class='col-form-label'>Atended Zoo keeper :</label>
@@ -382,6 +403,22 @@ export default class addAnimal extends Component {
 										/>
 									</div>
 								</div>
+					
+								<div class=''>
+								<div class='col-auto'>
+									<label class='col-form-label'>Feeding Time 2:</label>
+								</div>
+								<div class='col-auto'>
+									<input
+										type='time'
+										class='form-control'
+										min='1'
+										value={this.state.fTime2}
+										onChange={this.onChangefTime2}
+										required
+									/>
+								</div>
+							</div>{" "}
 								<br />
 								<br />
 							</div>

@@ -39,6 +39,7 @@ animalRoutes.route('/update/:id').post(function (req,res){
             animal.dateMedical = req.body.dateMedical;
             animal.timeTretement = req.body.timeTretement;
             animal.health = req.body.health;
+            animal.fTime2 = req.body.fTime2;
            
            
             animal.save().then(business => {
